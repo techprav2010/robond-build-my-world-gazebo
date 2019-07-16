@@ -1,0 +1,28 @@
+
+mkdir -p /home/lab/__robond/gazebo-office-world/build
+
+
+
+#set path
+cur_path=`pwd`
+export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:${cur_path}/build
+echo $GAZEBO_PLUGIN_PATH
+#:/home/lab/build:/home/lab/_robond/build_gazebo_world/build
+
+
+
+## build
+cur_path=`pwd`
+cd ${cur_path}/build
+cmake ..
+make
+cd ${cur_path}
+## build
+
+
+
+cd ${cur_path}/world/
+gazebo   myworld
+
+
+
